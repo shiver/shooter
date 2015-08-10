@@ -1,0 +1,329 @@
+﻿Build started 10/08/2015 6:18:01 p.m..
+     1>Project "E:\src\shooter\libs\SDL2-2.0.3\SDL2.vcxproj" on node 4 (Rebuild target(s)).
+     1>CustomBuild:
+         Building Custom Rule E:/src/shooter/libs/SDL2-2.0.3/CMakeLists.txt
+         CMake does not need to re-run because E:\src\shooter\libs\SDL2-2.0.3\CMakeFiles\generate.stamp is up-to-date.
+       ClCompile:
+         E:\Apps\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"E:\src\shooter\libs\SDL2-2.0.3\include" /I"e:\apps\Microsoft DirectX SDK (June 2010)\Include" /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D USING_GENERATED_CONFIG_H /D "CMAKE_INTDIR=\"Debug\"" /D SDL2_EXPORTS /D _WINDLL /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"SDL2.dir\Debug\\" /Fd"SDL2.dir\Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt "E:\src\shooter\libs\SDL2-2.0.3\src\SDL.c" "E:\src\shooter\libs\SDL2-2.0.3\src\SDL_assert.c" "E:\src\shooter\libs\SDL2-2.0.3\src\SDL_error.c" "E:\src\shooter\libs\SDL2-2.0.3\src\SDL_hints.c" "E:\src\shooter\libs\SDL2-2.0.3\src\SDL_log.c" "E:\src\shooter\libs\SDL2-2.0.3\src\atomic\SDL_atomic.c" "E:\src\shooter\libs\SDL2-2.0.3\src\atomic\SDL_spinlock.c" "E:\src\shooter\libs\SDL2-2.0.3\src\audio\SDL_audio.c" "E:\src\shooter\libs\SDL2-2.0.3\src\audio\SDL_audiocvt.c" "E:\src\shooter\libs\SDL2-2.0.3\src\audio\SDL_audiodev.c" "E:\src\shooter\libs\SDL2-2.0.3\src\audio\SDL_audiotypecvt.c" "E:\src\shooter\libs\SDL2-2.0.3\src\audio\SDL_mixer.c" "E:\src\shooter\libs\SDL2-2.0.3\src\audio\SDL_wave.c" "E:\src\shooter\libs\SDL2-2.0.3\src\cpuinfo\SDL_cpuinfo.c" "E:\src\shooter\libs\SDL2-2.0.3\src\dynapi\SDL_dynapi.c" "E:\src\shooter\libs\SDL2-2.0.3\src\events\SDL_clipboardevents.c" "E:\src\shooter\libs\SDL2-2.0.3\src\events\SDL_dropevents.c" "E:\src\shooter\libs\SDL2-2.0.3\src\events\SDL_events.c" "E:\src\shooter\libs\SDL2-2.0.3\src\events\SDL_gesture.c" "E:\src\shooter\libs\SDL2-2.0.3\src\events\SDL_keyboard.c" "E:\src\shooter\libs\SDL2-2.0.3\src\events\SDL_mouse.c" "E:\src\shooter\libs\SDL2-2.0.3\src\events\SDL_quit.c" "E:\src\shooter\libs\SDL2-2.0.3\src\events\SDL_touch.c" "E:\src\shooter\libs\SDL2-2.0.3\src\events\SDL_windowevents.c" "E:\src\shooter\libs\SDL2-2.0.3\src\file\SDL_rwops.c" "E:\src\shooter\libs\SDL2-2.0.3\src\libm\e_atan2.c" "E:\src\shooter\libs\SDL2-2.0.3\src\libm\e_log.c" "E:\src\shooter\libs\SDL2-2.0.3\src\libm\e_pow.c" "E:\src\shooter\libs\SDL2-2.0.3\src\libm\e_rem_pio2.c" "E:\src\shooter\libs\SDL2-2.0.3\src\libm\e_sqrt.c" "E:\src\shooter\libs\SDL2-2.0.3\src\libm\k_cos.c" "E:\src\shooter\libs\SDL2-2.0.3\src\libm\k_rem_pio2.c" "E:\src\shooter\libs\SDL2-2.0.3\src\libm\k_sin.c" "E:\src\shooter\libs\SDL2-2.0.3\src\libm\s_atan.c" "E:\src\shooter\libs\SDL2-2.0.3\src\libm\s_copysign.c" "E:\src\shooter\libs\SDL2-2.0.3\src\libm\s_cos.c" "E:\src\shooter\libs\SDL2-2.0.3\src\libm\s_fabs.c" "E:\src\shooter\libs\SDL2-2.0.3\src\libm\s_floor.c" "E:\src\shooter\libs\SDL2-2.0.3\src\libm\s_scalbn.c" "E:\src\shooter\libs\SDL2-2.0.3\src\libm\s_sin.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\SDL_d3dmath.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\SDL_render.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\SDL_yuv_mmx.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\SDL_yuv_sw.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\direct3d\SDL_render_d3d.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\direct3d11\SDL_render_d3d11.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\opengl\SDL_render_gl.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\opengl\SDL_shaders_gl.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\opengles\SDL_render_gles.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\opengles2\SDL_render_gles2.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\opengles2\SDL_shaders_gles2.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\psp\SDL_render_psp.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\software\SDL_blendfillrect.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\software\SDL_blendline.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\software\SDL_blendpoint.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\software\SDL_drawline.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\software\SDL_drawpoint.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\software\SDL_render_sw.c" "E:\src\shooter\libs\SDL2-2.0.3\src\render\software\SDL_rotate.c" "E:\src\shooter\libs\SDL2-2.0.3\src\stdlib\SDL_getenv.c" "E:\src\shooter\libs\SDL2-2.0.3\src\stdlib\SDL_iconv.c" "E:\src\shooter\libs\SDL2-2.0.3\src\stdlib\SDL_malloc.c" "E:\src\shooter\libs\SDL2-2.0.3\src\stdlib\SDL_qsort.c" "E:\src\shooter\libs\SDL2-2.0.3\src\stdlib\SDL_stdlib.c" "E:\src\shooter\libs\SDL2-2.0.3\src\stdlib\SDL_string.c" "E:\src\shooter\libs\SDL2-2.0.3\src\thread\SDL_thread.c" "E:\src\shooter\libs\SDL2-2.0.3\src\timer\SDL_timer.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_blit.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_blit_0.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_blit_1.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_blit_A.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_blit_auto.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_blit_copy.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_blit_N.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_blit_slow.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_bmp.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_clipboard.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_egl.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_fillrect.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_pixels.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_rect.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_RLEaccel.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_shape.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_stretch.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_surface.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\SDL_video.c" "E:\src\shooter\libs\SDL2-2.0.3\src\joystick\SDL_gamecontroller.c" "E:\src\shooter\libs\SDL2-2.0.3\src\joystick\SDL_joystick.c" "E:\src\shooter\libs\SDL2-2.0.3\src\haptic\SDL_haptic.c" "E:\src\shooter\libs\SDL2-2.0.3\src\power\SDL_power.c" "E:\src\shooter\libs\SDL2-2.0.3\src\audio\dummy\SDL_dummyaudio.c" "E:\src\shooter\libs\SDL2-2.0.3\src\audio\disk\SDL_diskaudio.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\dummy\SDL_nullevents.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\dummy\SDL_nullframebuffer.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\dummy\SDL_nullvideo.c" "E:\src\shooter\libs\SDL2-2.0.3\src\core\windows\SDL_windows.c" "E:\src\shooter\libs\SDL2-2.0.3\src\audio\winmm\SDL_winmm.c" "E:\src\shooter\libs\SDL2-2.0.3\src\audio\directsound\SDL_directsound.c" "E:\src\shooter\libs\SDL2-2.0.3\src\audio\xaudio2\SDL_xaudio2.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\windows\SDL_windowsclipboard.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\windows\SDL_windowsevents.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\windows\SDL_windowsframebuffer.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\windows\SDL_windowskeyboard.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\windows\SDL_windowsmessagebox.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\windows\SDL_windowsmodes.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\windows\SDL_windowsmouse.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\windows\SDL_windowsopengl.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\windows\SDL_windowsopengles.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\windows\SDL_windowsshape.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\windows\SDL_windowsvideo.c" "E:\src\shooter\libs\SDL2-2.0.3\src\video\windows\SDL_windowswindow.c" "E:\src\shooter\libs\SDL2-2.0.3\src\thread\windows\SDL_sysmutex.c" "E:\src\shooter\libs\SDL2-2.0.3\src\thread\windows\SDL_syssem.c" "E:\src\shooter\libs\SDL2-2.0.3\src\thread\windows\SDL_systhread.c" "E:\src\shooter\libs\SDL2-2.0.3\src\thread\windows\SDL_systls.c" "E:\src\shooter\libs\SDL2-2.0.3\src\thread\generic\SDL_syscond.c" "E:\src\shooter\libs\SDL2-2.0.3\src\power\windows\SDL_syspower.c" "E:\src\shooter\libs\SDL2-2.0.3\src\filesystem\windows\SDL_sysfilesystem.c" "E:\src\shooter\libs\SDL2-2.0.3\src\timer\windows\SDL_systimer.c" "E:\src\shooter\libs\SDL2-2.0.3\src\loadso\windows\SDL_sysloadso.c" "E:\src\shooter\libs\SDL2-2.0.3\src\joystick\windows\SDL_dxjoystick.c" "E:\src\shooter\libs\SDL2-2.0.3\src\haptic\windows\SDL_syshaptic.c"
+         SDL.c
+         SDL_assert.c
+         SDL_error.c
+         SDL_hints.c
+         SDL_log.c
+         SDL_atomic.c
+         SDL_spinlock.c
+         SDL_audio.c
+         SDL_audiocvt.c
+         SDL_audiodev.c
+         SDL_audiotypecvt.c
+         SDL_mixer.c
+         SDL_wave.c
+         SDL_cpuinfo.c
+         SDL_dynapi.c
+         SDL_clipboardevents.c
+         SDL_dropevents.c
+         SDL_events.c
+         SDL_gesture.c
+         SDL_keyboard.c
+         Generating Code...
+         Compiling...
+         SDL_mouse.c
+         SDL_quit.c
+         SDL_touch.c
+         SDL_windowevents.c
+         SDL_rwops.c
+         e_atan2.c
+         e_log.c
+         e_pow.c
+         e_rem_pio2.c
+         e_sqrt.c
+         k_cos.c
+         k_rem_pio2.c
+         k_sin.c
+         s_atan.c
+         s_copysign.c
+         s_cos.c
+         s_fabs.c
+         s_floor.c
+         s_scalbn.c
+         s_sin.c
+         Generating Code...
+         Compiling...
+         SDL_d3dmath.c
+         SDL_render.c
+         SDL_yuv_mmx.c
+         SDL_yuv_sw.c
+         SDL_render_d3d.c
+         SDL_render_d3d11.c
+         SDL_render_gl.c
+         SDL_shaders_gl.c
+         SDL_render_gles.c
+         SDL_render_gles2.c
+         SDL_shaders_gles2.c
+         SDL_render_psp.c
+         SDL_blendfillrect.c
+         SDL_blendline.c
+         SDL_blendpoint.c
+         SDL_drawline.c
+         SDL_drawpoint.c
+         SDL_render_sw.c
+         SDL_rotate.c
+         SDL_getenv.c
+         Generating Code...
+         Compiling...
+         SDL_iconv.c
+         SDL_malloc.c
+         SDL_qsort.c
+         SDL_stdlib.c
+         SDL_string.c
+         SDL_thread.c
+         SDL_timer.c
+         SDL_blit.c
+         SDL_blit_0.c
+         SDL_blit_1.c
+         SDL_blit_A.c
+         SDL_blit_auto.c
+         SDL_blit_copy.c
+         SDL_blit_N.c
+         SDL_blit_slow.c
+         SDL_bmp.c
+         SDL_clipboard.c
+         SDL_egl.c
+         SDL_fillrect.c
+         SDL_pixels.c
+         Generating Code...
+         Compiling...
+         SDL_rect.c
+         SDL_RLEaccel.c
+         SDL_shape.c
+         SDL_stretch.c
+         SDL_surface.c
+         SDL_video.c
+         SDL_gamecontroller.c
+         SDL_joystick.c
+         SDL_haptic.c
+         SDL_power.c
+         SDL_dummyaudio.c
+         SDL_diskaudio.c
+         SDL_nullevents.c
+         SDL_nullframebuffer.c
+         SDL_nullvideo.c
+         SDL_windows.c
+         SDL_winmm.c
+         SDL_directsound.c
+         SDL_xaudio2.c
+         SDL_windowsclipboard.c
+         Generating Code...
+         Compiling...
+         SDL_windowsevents.c
+         SDL_windowsframebuffer.c
+         SDL_windowskeyboard.c
+     1>E:\src\shooter\libs\SDL2-2.0.3\src\video\windows\SDL_windowskeyboard.c(396): warning C4996: 'GetVersionExA': was declared deprecated
+         C:\Program Files (x86)\Windows Kits\8.1\Include\um\sysinfoapi.h(433): note: see declaration of 'GetVersionExA'
+         SDL_windowsmessagebox.c
+         SDL_windowsmodes.c
+         SDL_windowsmouse.c
+         SDL_windowsopengl.c
+         SDL_windowsopengles.c
+         SDL_windowsshape.c
+         SDL_windowsvideo.c
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50092): note: see previous definition of 'DXGI_STATUS_OCCLUDED'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50101): note: see previous definition of 'DXGI_STATUS_CLIPPED'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50110): note: see previous definition of 'DXGI_STATUS_NO_REDIRECTION'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50119): note: see previous definition of 'DXGI_STATUS_NO_DESKTOP_ACCESS'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50128): note: see previous definition of 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50137): note: see previous definition of 'DXGI_STATUS_MODE_CHANGED'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50146): note: see previous definition of 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50161): note: see previous definition of 'DXGI_ERROR_INVALID_CALL'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50170): note: see previous definition of 'DXGI_ERROR_NOT_FOUND'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50179): note: see previous definition of 'DXGI_ERROR_MORE_DATA'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50188): note: see previous definition of 'DXGI_ERROR_UNSUPPORTED'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50197): note: see previous definition of 'DXGI_ERROR_DEVICE_REMOVED'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50206): note: see previous definition of 'DXGI_ERROR_DEVICE_HUNG'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50216): note: see previous definition of 'DXGI_ERROR_DEVICE_RESET'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50225): note: see previous definition of 'DXGI_ERROR_WAS_STILL_DRAWING'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50235): note: see previous definition of 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50244): note: see previous definition of 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50254): note: see previous definition of 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50263): note: see previous definition of 'DXGI_ERROR_NONEXCLUSIVE'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50272): note: see previous definition of 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50282): note: see previous definition of 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'
+     1>e:\apps\microsoft directx sdk (june 2010)\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY': macro redefinition
+         C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50291): note: see previous definition of 'DXGI_ERROR_REMOTE_OUTOFMEMORY'
+         SDL_windowswindow.c
+         SDL_sysmutex.c
+         SDL_syssem.c
+         SDL_systhread.c
+         SDL_systls.c
+         SDL_syscond.c
+         SDL_syspower.c
+         SDL_sysfilesystem.c
+         SDL_systimer.c
+         SDL_sysloadso.c
+         Generating Code...
+         Compiling...
+         SDL_dxjoystick.c
+         SDL_syshaptic.c
+         Generating Code...
+       Link:
+         E:\Apps\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\src\shooter\libs\SDL2-2.0.3\Debug\SDL2.dll" /INCREMENTAL /NOLOGO /LIBPATH:"e:/apps/Microsoft DirectX SDK (June 2010)//lib/x86" /LIBPATH:"e:/apps/Microsoft DirectX SDK (June 2010)//lib/x86/Debug" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib user32.lib gdi32.lib winmm.lib imm32.lib ole32.lib oleaut32.lib version.lib uuid.lib dinput8.lib dxguid.lib dxerr.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"E:/src/shooter/libs/SDL2-2.0.3/Debug/SDL2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/src/shooter/libs/SDL2-2.0.3/Debug/SDL2.lib" /MACHINE:X86 /SAFESEH  /machine:X86 /debug /DLL SDL2.dir\Debug\SDL.obj
+         SDL2.dir\Debug\SDL_assert.obj
+         SDL2.dir\Debug\SDL_error.obj
+         SDL2.dir\Debug\SDL_hints.obj
+         SDL2.dir\Debug\SDL_log.obj
+         SDL2.dir\Debug\SDL_atomic.obj
+         SDL2.dir\Debug\SDL_spinlock.obj
+         SDL2.dir\Debug\SDL_audio.obj
+         SDL2.dir\Debug\SDL_audiocvt.obj
+         SDL2.dir\Debug\SDL_audiodev.obj
+         SDL2.dir\Debug\SDL_audiotypecvt.obj
+         SDL2.dir\Debug\SDL_mixer.obj
+         SDL2.dir\Debug\SDL_wave.obj
+         SDL2.dir\Debug\SDL_cpuinfo.obj
+         SDL2.dir\Debug\SDL_dynapi.obj
+         SDL2.dir\Debug\SDL_clipboardevents.obj
+         SDL2.dir\Debug\SDL_dropevents.obj
+         SDL2.dir\Debug\SDL_events.obj
+         SDL2.dir\Debug\SDL_gesture.obj
+         SDL2.dir\Debug\SDL_keyboard.obj
+         SDL2.dir\Debug\SDL_mouse.obj
+         SDL2.dir\Debug\SDL_quit.obj
+         SDL2.dir\Debug\SDL_touch.obj
+         SDL2.dir\Debug\SDL_windowevents.obj
+         SDL2.dir\Debug\SDL_rwops.obj
+         SDL2.dir\Debug\e_atan2.obj
+         SDL2.dir\Debug\e_log.obj
+         SDL2.dir\Debug\e_pow.obj
+         SDL2.dir\Debug\e_rem_pio2.obj
+         SDL2.dir\Debug\e_sqrt.obj
+         SDL2.dir\Debug\k_cos.obj
+         SDL2.dir\Debug\k_rem_pio2.obj
+         SDL2.dir\Debug\k_sin.obj
+         SDL2.dir\Debug\s_atan.obj
+         SDL2.dir\Debug\s_copysign.obj
+         SDL2.dir\Debug\s_cos.obj
+         SDL2.dir\Debug\s_fabs.obj
+         SDL2.dir\Debug\s_floor.obj
+         SDL2.dir\Debug\s_scalbn.obj
+         SDL2.dir\Debug\s_sin.obj
+         SDL2.dir\Debug\SDL_d3dmath.obj
+         SDL2.dir\Debug\SDL_render.obj
+         SDL2.dir\Debug\SDL_yuv_mmx.obj
+         SDL2.dir\Debug\SDL_yuv_sw.obj
+         SDL2.dir\Debug\SDL_render_d3d.obj
+         SDL2.dir\Debug\SDL_render_d3d11.obj
+         SDL2.dir\Debug\SDL_render_gl.obj
+         SDL2.dir\Debug\SDL_shaders_gl.obj
+         SDL2.dir\Debug\SDL_render_gles.obj
+         SDL2.dir\Debug\SDL_render_gles2.obj
+         SDL2.dir\Debug\SDL_shaders_gles2.obj
+         SDL2.dir\Debug\SDL_render_psp.obj
+         SDL2.dir\Debug\SDL_blendfillrect.obj
+         SDL2.dir\Debug\SDL_blendline.obj
+         SDL2.dir\Debug\SDL_blendpoint.obj
+         SDL2.dir\Debug\SDL_drawline.obj
+         SDL2.dir\Debug\SDL_drawpoint.obj
+         SDL2.dir\Debug\SDL_render_sw.obj
+         SDL2.dir\Debug\SDL_rotate.obj
+         SDL2.dir\Debug\SDL_getenv.obj
+         SDL2.dir\Debug\SDL_iconv.obj
+         SDL2.dir\Debug\SDL_malloc.obj
+         SDL2.dir\Debug\SDL_qsort.obj
+         SDL2.dir\Debug\SDL_stdlib.obj
+         SDL2.dir\Debug\SDL_string.obj
+         SDL2.dir\Debug\SDL_thread.obj
+         SDL2.dir\Debug\SDL_timer.obj
+         SDL2.dir\Debug\SDL_blit.obj
+         SDL2.dir\Debug\SDL_blit_0.obj
+         SDL2.dir\Debug\SDL_blit_1.obj
+         SDL2.dir\Debug\SDL_blit_A.obj
+         SDL2.dir\Debug\SDL_blit_auto.obj
+         SDL2.dir\Debug\SDL_blit_copy.obj
+         SDL2.dir\Debug\SDL_blit_N.obj
+         SDL2.dir\Debug\SDL_blit_slow.obj
+         SDL2.dir\Debug\SDL_bmp.obj
+         SDL2.dir\Debug\SDL_clipboard.obj
+         SDL2.dir\Debug\SDL_egl.obj
+         SDL2.dir\Debug\SDL_fillrect.obj
+         SDL2.dir\Debug\SDL_pixels.obj
+         SDL2.dir\Debug\SDL_rect.obj
+         SDL2.dir\Debug\SDL_RLEaccel.obj
+         SDL2.dir\Debug\SDL_shape.obj
+         SDL2.dir\Debug\SDL_stretch.obj
+         SDL2.dir\Debug\SDL_surface.obj
+         SDL2.dir\Debug\SDL_video.obj
+         SDL2.dir\Debug\SDL_gamecontroller.obj
+         SDL2.dir\Debug\SDL_joystick.obj
+         SDL2.dir\Debug\SDL_haptic.obj
+         SDL2.dir\Debug\SDL_power.obj
+         SDL2.dir\Debug\SDL_dummyaudio.obj
+         SDL2.dir\Debug\SDL_diskaudio.obj
+         SDL2.dir\Debug\SDL_nullevents.obj
+         SDL2.dir\Debug\SDL_nullframebuffer.obj
+         SDL2.dir\Debug\SDL_nullvideo.obj
+         SDL2.dir\Debug\SDL_windows.obj
+         SDL2.dir\Debug\SDL_winmm.obj
+         SDL2.dir\Debug\SDL_directsound.obj
+         SDL2.dir\Debug\SDL_xaudio2.obj
+         SDL2.dir\Debug\SDL_windowsclipboard.obj
+         SDL2.dir\Debug\SDL_windowsevents.obj
+         SDL2.dir\Debug\SDL_windowsframebuffer.obj
+         SDL2.dir\Debug\SDL_windowskeyboard.obj
+         SDL2.dir\Debug\SDL_windowsmessagebox.obj
+         SDL2.dir\Debug\SDL_windowsmodes.obj
+         SDL2.dir\Debug\SDL_windowsmouse.obj
+         SDL2.dir\Debug\SDL_windowsopengl.obj
+         SDL2.dir\Debug\SDL_windowsopengles.obj
+         SDL2.dir\Debug\SDL_windowsshape.obj
+         SDL2.dir\Debug\SDL_windowsvideo.obj
+         SDL2.dir\Debug\SDL_windowswindow.obj
+         SDL2.dir\Debug\SDL_sysmutex.obj
+         SDL2.dir\Debug\SDL_syssem.obj
+         SDL2.dir\Debug\SDL_systhread.obj
+         SDL2.dir\Debug\SDL_systls.obj
+         SDL2.dir\Debug\SDL_syscond.obj
+         SDL2.dir\Debug\SDL_syspower.obj
+         SDL2.dir\Debug\SDL_sysfilesystem.obj
+         SDL2.dir\Debug\SDL_systimer.obj
+         SDL2.dir\Debug\SDL_sysloadso.obj
+         SDL2.dir\Debug\SDL_dxjoystick.obj
+         SDL2.dir\Debug\SDL_syshaptic.obj
+            Creating library E:/src/shooter/libs/SDL2-2.0.3/Debug/SDL2.lib and object E:/src/shooter/libs/SDL2-2.0.3/Debug/SDL2.exp
+     1>MSVCRTD.lib(_init_.obj) : error LNK2019: unresolved external symbol __CrtDbgReport referenced in function __CRT_RTC_INIT
+     1>MSVCRTD.lib(_init_.obj) : error LNK2019: unresolved external symbol __CrtDbgReportW referenced in function __CRT_RTC_INITW
+     1>MSVCRTD.lib(_ftol3_.obj) : error LNK2019: unresolved external symbol __except1 referenced in function __ftol3_except
+     1>MSVCRTD.lib(_error_.obj) : error LNK2019: unresolved external symbol ___stdio_common_vsprintf_s referenced in function __vsprintf_s_l
+     1>MSVCRTD.lib(_pdblkup_.obj) : error LNK2019: unresolved external symbol __wmakepath_s referenced in function "int __cdecl GetPdbDllPathFromFilePath(wchar_t const *,wchar_t *,unsigned int)" (?GetPdbDllPathFromFilePath@@YAHPB_WPA_WI@Z)
+     1>MSVCRTD.lib(_pdblkup_.obj) : error LNK2019: unresolved external symbol __wsplitpath_s referenced in function "int __cdecl GetPdbDllPathFromFilePath(wchar_t const *,wchar_t *,unsigned int)" (?GetPdbDllPathFromFilePath@@YAHPB_WPA_WI@Z)
+     1>MSVCRTD.lib(_pdblkup_.obj) : error LNK2019: unresolved external symbol _wcscpy_s referenced in function "int __cdecl GetPdbDllPathFromFilePath(wchar_t const *,wchar_t *,unsigned int)" (?GetPdbDllPathFromFilePath@@YAHPB_WPA_WI@Z)
+     1>MSVCRTD.lib(_pdblkup_.obj) : error LNK2019: unresolved external symbol ___vcrt_GetModuleFileNameW referenced in function "struct HINSTANCE__ * __cdecl GetPdbDll(void)" (?GetPdbDll@@YAPAUHINSTANCE__@@XZ)
+     1>MSVCRTD.lib(_pdblkup_.obj) : error LNK2019: unresolved external symbol ___vcrt_GetModuleHandleW referenced in function "struct HINSTANCE__ * __cdecl GetPdbDll(void)" (?GetPdbDll@@YAPAUHINSTANCE__@@XZ)
+     1>MSVCRTD.lib(_pdblkup_.obj) : error LNK2019: unresolved external symbol ___vcrt_LoadLibraryExW referenced in function "struct HINSTANCE__ * __cdecl GetPdbDll(void)" (?GetPdbDll@@YAPAUHINSTANCE__@@XZ)
+     1>MSVCRTD.lib(_chandler4gs_.obj) : error LNK2019: unresolved external symbol __except_handler4_common referenced in function __except_handler4
+     1>E:\src\shooter\libs\SDL2-2.0.3\Debug\SDL2.dll : fatal error LNK1120: 11 unresolved externals
+     1>Done Building Project "E:\src\shooter\libs\SDL2-2.0.3\SDL2.vcxproj" (Rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:13.53
