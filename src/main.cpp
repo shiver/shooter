@@ -2,20 +2,33 @@
 #include <utility>
 #include <memory>
 #include <SDL.h>
+#include <GL/glew.h>
 
+
+struct SDLWindowDestroyer {
+    void operator()(SDL_Window* w) const {
+        SDL_DestroyWindow(w);
+    }
+};
+
+struct SDLRendererDestroyer {
+    void operator()(SDL_Renderer* r) const {
+        SDL_DestroyRenderer(r);
+    }
+};
 
 class Window {
 public:
    Window();
-	Window(int, int);
+   Window(int, int);
    ~Window();
 
 private:
    void createWindow();
    void createRenderer();
 
-	std::unique_ptr<SDL_Window> window;
-	std::unique_ptr<SDL_Renderer> renderer;
+	std::unique_ptr<SDL_Window, SDLWindowDestroyer> window;
+	std::unique_ptr<SDL_Renderer, SDLRendererDestroyer> renderer;
 
 
    int window_opts;
@@ -28,9 +41,8 @@ Window::Window() {
 }
 
 void Window::createWindow() {
-   auto window = std::make_unique<SDL_Window>(
-       SDL_CreateWindow("Hello World!", 100, 100, 640, 480, SDL_WINDOW_SHOWN),
-	   [](SDL_Window *w){SDL_DestroyWindow(w);}
+   auto window = std::unique_ptr<SDL_Window, SDLWindowDestroyer>(
+       SDL_CreateWindow("Hello World!", 100, 100, 640, 480, SDL_WINDOW_SHOWN)
    );
 
    if (window == nullptr) {
@@ -41,11 +53,11 @@ void Window::createWindow() {
 }
 
 void Window::createRenderer() {
-	auto renderer = std::make_unique<SDL_Renderer>(
+	auto renderer = std::unique_ptr<SDL_Renderer, SDLRendererDestroyer>(
        SDL_CreateRenderer(
            this->window.get(), -1,
            SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC
-       ), [](SDL_Renderer *r){SDL_DestroyRenderer(r);}
+       )
    );
 
    if (renderer == nullptr) {
@@ -61,7 +73,6 @@ Window::Window(int w_opts, int r_opts) : window_opts(w_opts), renderer_opts(r_op
 }
 
 Window::~Window() {
-
    SDL_Quit();
 }
 
@@ -71,7 +82,7 @@ int main(int argc, char* args[]) {
 		return 1;
 	}
 
-    //Window window();
+    Window window();
 
 	return EXIT_SUCCESS;
 }
