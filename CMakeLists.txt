@@ -7,7 +7,7 @@ set(SDL_STATIC OFF CACHE BOOL "Disable static library" FORCE)
 add_subdirectory(libs/SDL2-2.0.3)
 include_directories(${SDL2_SOURCE_DIR}/include)
 
-add_subdirectory(libs/glew-cmake-1.13.0/)
+add_subdirectory(libs/glew-cmake-1.13.0)
 
 if(${CMAKE_CXX_COMPILER_ID} STREQUAL "MSVC")
 else()
