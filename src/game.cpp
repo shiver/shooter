@@ -3,6 +3,7 @@
 #include <GL/glew.h>
 
 #include "game.h"
+#include "sprite.h"
 
 Game::Game(Window &window) : window(window) {}
 
@@ -11,6 +12,9 @@ void Game::run() {
 
   glClearColor(0.0, 0.0, 0.0, 1.0);
   glClear(GL_COLOR_BUFFER_BIT);
+
+  Sprite sprite{Vector2<GLfloat>(0.0, 0.0), Vector2<GLfloat>(0.0, 0.0)};
+
   window.swapBuffers();
 
   while (true) {
