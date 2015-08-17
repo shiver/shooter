@@ -1,9 +1,12 @@
 #include <iostream>
+#include <vector>
+#include <utility>
 
 #include <GL/glew.h>
 
 #include "game.h"
 #include "sprite.h"
+#include "vector.h"
 
 Game::Game(Window &window) : window(window) {}
 
@@ -13,7 +16,12 @@ void Game::run() {
   glClearColor(0.0, 0.0, 0.0, 1.0);
   glClear(GL_COLOR_BUFFER_BIT);
 
-  Sprite sprite{Vector2<GLfloat>(0.0, 0.0), Vector2<GLfloat>(0.0, 0.0)};
+  Sprite sprite{Vector2<>(0.0, 0.0), Vector2<>(0.0, 0.0)};
+  std::vector<Vector3<>> mesh{
+      {-0.5f, -0.5f, 0.0f}, {0.5f, -0.5f, 0.0f}, {0.0f, 0.5f, 0.0f}};
+
+  auto shared = std::make_shared<std::vector<Vector3<>>>(mesh);
+  sprite.assignMesh(shared);
 
   window.swapBuffers();
 
