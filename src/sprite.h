@@ -15,8 +15,8 @@ public:
   void assignMesh(const std::shared_ptr<std::vector<Vector3<>>>);
 
 private:
-  Vector2<GLfloat> dimensions;
-  Vector2<GLfloat> position;
+  Vector2<> position;
+  Vector2<> dimensions;
 
   GLuint vbo;
   std::shared_ptr<std::vector<Vector3<>>> mesh;
