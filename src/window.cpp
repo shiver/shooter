@@ -20,38 +20,38 @@ void Window::createWindow() {
   if (window == nullptr) {
     std::cerr << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
   } else {
-    this->window = std::move(window);
+    _window = std::move(window);
   }
 }
 
 void Window::createRenderer() {
   auto renderer = std::unique_ptr<SDL_Renderer, SDLDestroyer>(
-      SDL_CreateRenderer(this->window.get(), -1,
+      SDL_CreateRenderer(_window.get(), -1,
                          SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC));
 
   if (renderer == nullptr) {
     std::cerr << "SDL_CreateRenderer Error: " << SDL_GetError() << std::endl;
   } else {
-    this->renderer = std::move(renderer);
+    _renderer = std::move(renderer);
   }
 }
 
 void Window::createGLContext() {
-  auto context = SDL_GL_CreateContext(this->window.get());
+  auto context = SDL_GL_CreateContext(_window.get());
 
   if (context == nullptr) {
     std::cerr << "SDL_GL_CreateContext Error: " << SDL_GetError() << std::endl;
   } else {
-    this->gl_context = std::unique_ptr<SDL_GLContext, SDLDestroyer>(&context);
+    _gl_context = std::unique_ptr<SDL_GLContext, SDLDestroyer>(&context);
   }
 }
 
 Window::Window(int w_opts, int r_opts)
-    : window_opts(w_opts), renderer_opts(r_opts) {
+    : _window_opts(w_opts), _renderer_opts(r_opts) {
   createWindow();
   createRenderer();
 }
 
-void Window::swapBuffers() { SDL_GL_SwapWindow(this->window.get()); }
+void Window::swapBuffers() { SDL_GL_SwapWindow(_window.get()); }
 
-Window::~Window() { SDL_Quit(); }
+//Window::~Window() { SDL_Quit(); }

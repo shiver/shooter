@@ -4,6 +4,8 @@
 
 #include "game.h"
 #include "window.h"
+#include "resource.h"
+#include "util.h"
 
 int main(int argc, char **args) {
   if (SDL_Init(SDL_INIT_VIDEO) != 0) {
@@ -11,8 +13,10 @@ int main(int argc, char **args) {
     return EXIT_FAILURE;
   }
 
-  Window window{};
-  Game game{window};
+  auto main_window = make_unique<Window>();
+  auto resource_manager = make_unique<ResourceManager>();
+
+  auto game = Game(std::move(main_window), std::move(resource_manager));
   game.run();
 
   return EXIT_SUCCESS;

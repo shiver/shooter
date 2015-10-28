@@ -15,7 +15,9 @@ class Window {
 public:
   Window();
   Window(int, int);
-  ~Window();
+
+  Window(Window&& window) = default;
+  virtual ~Window() = default;
 
   void swapBuffers();
 
@@ -24,10 +26,10 @@ private:
   void createRenderer();
   void createGLContext();
 
-  std::unique_ptr<SDL_Window, SDLDestroyer> window;
-  std::unique_ptr<SDL_Renderer, SDLDestroyer> renderer;
-  std::unique_ptr<SDL_GLContext, SDLDestroyer> gl_context;
+  std::unique_ptr<SDL_Window, SDLDestroyer> _window;
+  std::unique_ptr<SDL_Renderer, SDLDestroyer> _renderer;
+  std::unique_ptr<SDL_GLContext, SDLDestroyer> _gl_context;
 
-  int window_opts;
-  int renderer_opts;
+  int _window_opts;
+  int _renderer_opts;
 };

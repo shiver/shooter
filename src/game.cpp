@@ -1,14 +1,19 @@
 #include <iostream>
 #include <vector>
 #include <utility>
+#include <memory>
 
 #include <GL/glew.h>
 
 #include "game.h"
+#include "resource.h"
+#include "window.h"
 #include "sprite.h"
 #include "vector.h"
+#include "util.h"
 
-Game::Game(Window &window) : window(window) {}
+Game::Game(std::unique_ptr<Window> window, std::unique_ptr<ResourceManager> resources) : 
+    _window(std::move(window)), _resources(std::move(resources)) {}
 
 void Game::run() {
   SDL_Event event;
@@ -16,7 +21,7 @@ void Game::run() {
   glClearColor(0.0, 0.0, 0.0, 1.0);
   glClear(GL_COLOR_BUFFER_BIT);
 
-  window.swapBuffers();
+  _window->swapBuffers();
 
   while (true) {
     while (SDL_PollEvent(&event)) {
