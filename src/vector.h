@@ -20,3 +20,5 @@ private:
   T y;
   T z;
 };
+
+// vim: ts=2:sw=2:et:

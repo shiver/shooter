@@ -54,4 +54,6 @@ Window::Window(int w_opts, int r_opts)
 
 void Window::swapBuffers() { SDL_GL_SwapWindow(_window.get()); }
 
-//Window::~Window() { SDL_Quit(); }
+Window::~Window() { SDL_Quit(); }
+
+// vim: ts=2:sw=2:et:

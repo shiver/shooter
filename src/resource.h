@@ -22,3 +22,4 @@ private:
     std::unordered_map<std::string, Resource> _resources;
 };
 
+// vim: ts=2:sw=2:et:

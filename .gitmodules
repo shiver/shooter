@@ -4,3 +4,6 @@
 [submodule "libs/SDL2"]
 	path = libs/SDL2
 	url = https://github.com/spurious/SDL-mirror.git
+[submodule "libs/easyloggingpp"]
+	path = libs/easyloggingpp
+	url = https://github.com/easylogging/easyloggingpp.git

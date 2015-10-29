@@ -21,3 +21,5 @@ private:
   GLuint vbo;
   std::shared_ptr<std::vector<Vector3<>>> mesh;
 };
+
+// vim: ts=2:sw=2:et:

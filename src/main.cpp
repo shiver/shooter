@@ -2,14 +2,19 @@
 
 #include <SDL.h>
 
+#include <easylogging++.h>
+INITIALIZE_EASYLOGGINGPP
+
 #include "game.h"
 #include "window.h"
 #include "resource.h"
 #include "util.h"
 
-int main(int argc, char **args) {
+int main() {
+  LOG(INFO) << "Startup";
+
   if (SDL_Init(SDL_INIT_VIDEO) != 0) {
-    std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
+    LOG(ERROR) << "SDL_Init Error: " << SDL_GetError() << "\n";
     return EXIT_FAILURE;
   }
 
@@ -19,5 +24,8 @@ int main(int argc, char **args) {
   auto game = Game(std::move(main_window), std::move(resource_manager));
   game.run();
 
+  LOG(INFO) << "Shutdown";
   return EXIT_SUCCESS;
 }
+
+// vim: ts=2:sw=2:et:

@@ -16,3 +16,5 @@ private:
   std::unique_ptr<Window> _window;
   std::unique_ptr<ResourceManager> _resources;
 };
+
+// vim: ts=2:sw=2:et:

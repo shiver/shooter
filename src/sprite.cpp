@@ -17,3 +17,5 @@ void Sprite::assignMesh(const std::shared_ptr<std::vector<Vector3<>>> mesh) {
   glBufferData(GL_ARRAY_BUFFER, sizeof(this->mesh.get()->data()),
                mesh.get()->data(), GL_STATIC_DRAW);
 }
+
+// vim: ts=2:sw=2:et:

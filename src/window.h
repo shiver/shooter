@@ -17,7 +17,7 @@ public:
   Window(int, int);
 
   Window(Window&& window) = default;
-  virtual ~Window() = default;
+  ~Window();
 
   void swapBuffers();
 
@@ -33,3 +33,5 @@ private:
   int _window_opts;
   int _renderer_opts;
 };
+
+// vim: ts=2:sw=2:et:
