@@ -10,7 +10,7 @@ INITIALIZE_EASYLOGGINGPP
 #include "resource.h"
 #include "util.h"
 
-int main() {
+int main(int argc, char* argv[]) {
   LOG(INFO) << "Startup";
 
   if (SDL_Init(SDL_INIT_VIDEO) != 0) {
