@@ -35,8 +35,8 @@ file(GLOB shooter_SRC
 )
 
 add_executable(shooter ${shooter_SRC})
-target_link_libraries(shooter 
+target_link_libraries(shooter
     optimized SDL2 debug SDL2
-    optimized SDL2main debug SDL2main 
+    optimized SDL2main debug SDL2main
     optimized libglew_shared debug libglew_shared)
-install(TARGETS shooter RUNTIME DESTINATION bin/)
+install(TARGETS shooter DESTINATION bin)
