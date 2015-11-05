@@ -13,6 +13,10 @@
 #include "vector.h"
 #include "util.h"
 #include "timer.h"
+#include "render.h"
+
+const int MAX_FPS = 60;
+const int TICKS_PER_FRAME = 1000/MAX_FPS;
 
 Game::Game(std::unique_ptr<Window> window, std::unique_ptr<ResourceManager> resources) :
     _window(std::move(window)), _resources(std::move(resources)) {}
@@ -20,30 +24,30 @@ Game::Game(std::unique_ptr<Window> window, std::unique_ptr<ResourceManager> reso
 void Game::run() {
   std::uint32_t frames_rendered = 0;
   Timer rate_timer{};
-
+  Renderer renderer{MAX_FPS};
   SDL_Event event;
 
-
+  rate_timer.start();
   while (true) {
-    rate_timer.start();
 
-    if (frames_rendered <= 60) {
-      glClearColor(0.0, 0.0, 0.0, 1.0);
-      glClear(GL_COLOR_BUFFER_BIT);
-
+    if (frames_rendered < MAX_FPS) {
+      renderer.render();
       _window->swapBuffers();
       frames_rendered++;
-
-      if (rate_timer.get_ticks() < 1000/60) {
-        SDL_Delay(1000/60 - rate_timer.get_ticks());
-      }
     } else {
-      LOG(DEBUG) << "Frames capped: " << frames_rendered << " [" << rate_timer.get_ticks() << "]\n";
+
+      if (rate_timer.get_ticks() < TICKS_PER_FRAME) {
+        LOG(DEBUG) << "Frames capped: " << frames_rendered << " [" << rate_timer.get_ticks() << "]\n";
+        float delay = TICKS_PER_FRAME - rate_timer.get_ticks();
+        LOG(DEBUG) << "Waiting for: " << delay << "\n";
+        SDL_Delay(delay);
+      }
 
       rate_timer.stop();
       rate_timer.reset();
       frames_rendered = 0;
     }
+
 
     while (SDL_PollEvent(&event)) {
       switch (event.type) {

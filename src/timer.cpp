@@ -4,7 +4,7 @@
 
 
 void Timer::start() {
-    if (is_stopped()) return;
+    if (!is_stopped()) return;
     _start_ticks = SDL_GetTicks();
     _started = true;
 }
