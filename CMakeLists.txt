@@ -29,6 +29,20 @@ include_directories(${GLEW_SOURCE_DIR}/include)
 SET(EASYLOGGINGPP_SOURCE_DIR libs/easyloggingpp)
 include_directories(${EASYLOGGINGPP_SOURCE_DIR}/src)
 
+INCLUDE(ExternalProject)
+ExternalProject_Add(SDL2_image
+    SOURCE_DIR ${CMAKE_SOURCE_DIR}/libs/SDL2_image
+    BUILD_IN_SOURCE 1
+    PREFIX ${CMAKE_BINARY_DIR}/libs/SDL2_image
+    CONFIGURE_COMMAND ${CMAKE_SOURCE_DIR}/libs/SDL2_image/autogen.sh && ${CMAKE_SOURCE_DIR}/libs/SDL2_image/configure
+    BUILD_COMMAND make
+    INSTALL_COMMAND ""
+)
+
+SET(SDL2_IMAGE_SOURCE_DIR libs/SDL2_image)
+include_directories(${SDL2_IMAGE_SOURCE_DIR})
+
+
 file(GLOB shooter_SRC
     "src/*.h"
     "src/*.cpp"
@@ -38,5 +52,6 @@ add_executable(shooter ${shooter_SRC})
 target_link_libraries(shooter
     optimized SDL2 debug SDL2
     optimized SDL2main debug SDL2main
+    optimized SDL2_image debug SDL2_image
     optimized libglew_shared debug libglew_shared)
 install(TARGETS shooter DESTINATION bin)

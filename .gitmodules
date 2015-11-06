@@ -7,3 +7,6 @@
 [submodule "libs/easyloggingpp"]
 	path = libs/easyloggingpp
 	url = https://github.com/easylogging/easyloggingpp.git
+[submodule "libs/SDL2_image"]
+	path = libs/SDL2_image
+	url = https://github.com/davidsiaw/SDL2_image.git
