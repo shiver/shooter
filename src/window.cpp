@@ -2,17 +2,30 @@
 #include <memory>
 #include <utility>
 
+#include <easylogging++.h>
 #include <SDL.h>
+#include <SDL_image.h>
 
 #include "window.h"
 
 Window::Window() {
-  createWindow();
-  createRenderer();
-  createGLContext();
+  create_window();
+  create_renderer();
+  create_GLContext();
+  initialise_image_support();
 }
 
-void Window::createWindow() {
+bool Window::initialise_image_support() {
+  int img_flags = IMG_Init(IMG_INIT_PNG);
+	if ((img_flags & IMG_INIT_PNG) != IMG_INIT_PNG) {
+		LOG(ERROR) << "SDL2_image failed to initialise PNG support\n";
+    return false;
+	}
+
+  return true;
+}
+
+void Window::create_window() {
   auto window = std::unique_ptr<SDL_Window, SDLDestroyer>(SDL_CreateWindow(
       "Hello World!", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640,
       480, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE));
@@ -24,7 +37,7 @@ void Window::createWindow() {
   }
 }
 
-void Window::createRenderer() {
+void Window::create_renderer() {
   auto renderer = std::unique_ptr<SDL_Renderer, SDLDestroyer>(
       SDL_CreateRenderer(_window.get(), -1,
                          SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC));
@@ -36,7 +49,7 @@ void Window::createRenderer() {
   }
 }
 
-void Window::createGLContext() {
+void Window::create_GLContext() {
   auto context = SDL_GL_CreateContext(_window.get());
 
   if (context == nullptr) {
@@ -48,11 +61,12 @@ void Window::createGLContext() {
 
 Window::Window(int w_opts, int r_opts)
     : _window_opts(w_opts), _renderer_opts(r_opts) {
-  createWindow();
-  createRenderer();
+  create_window();
+  create_renderer();
+  initialise_image_support();
 }
 
-void Window::swapBuffers() { SDL_GL_SwapWindow(_window.get()); }
+void Window::swap_buffers() { SDL_GL_SwapWindow(_window.get()); }
 
 Window::~Window() { SDL_Quit(); }
 

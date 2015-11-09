@@ -30,18 +30,20 @@ SET(EASYLOGGINGPP_SOURCE_DIR libs/easyloggingpp)
 include_directories(${EASYLOGGINGPP_SOURCE_DIR}/src)
 
 INCLUDE(ExternalProject)
-ExternalProject_Add(SDL2_image
+ExternalProject_Add(project_SDL2_image
     SOURCE_DIR ${CMAKE_SOURCE_DIR}/libs/SDL2_image
-    BUILD_IN_SOURCE 1
     PREFIX ${CMAKE_BINARY_DIR}/libs/SDL2_image
-    CONFIGURE_COMMAND ${CMAKE_SOURCE_DIR}/libs/SDL2_image/autogen.sh && ${CMAKE_SOURCE_DIR}/libs/SDL2_image/configure
-    BUILD_COMMAND make
-    INSTALL_COMMAND ""
+    CONFIGURE_COMMAND ${CMAKE_SOURCE_DIR}/libs/SDL2_image/autogen.sh && ${CMAKE_SOURCE_DIR}/libs/SDL2_image/configure --prefix ${CMAKE_BINARY_DIR} --libdir ${CMAKE_BINARY_DIR}/libs/SDL2_image
+	BUILD_COMMAND make
+    INSTALL_COMMAND make install
 )
+ExternalProject_Get_Property(project_SDL2_image install_dir)
+add_library(SDL2_image STATIC IMPORTED)
+set_property(TARGET SDL2_image PROPERTY IMPORTED_LOCATION ${install_dir}/libSDL2_image.a)
+add_dependencies(SDL2_image project_SDL2_image)
 
 SET(SDL2_IMAGE_SOURCE_DIR libs/SDL2_image)
 include_directories(${SDL2_IMAGE_SOURCE_DIR})
-
 
 file(GLOB shooter_SRC
     "src/*.h"
@@ -52,6 +54,6 @@ add_executable(shooter ${shooter_SRC})
 target_link_libraries(shooter
     optimized SDL2 debug SDL2
     optimized SDL2main debug SDL2main
-    optimized SDL2_image debug SDL2_image
+	optimized SDL2_image debug SDL2_image
     optimized libglew_shared debug libglew_shared)
 install(TARGETS shooter DESTINATION bin)

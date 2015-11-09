@@ -19,12 +19,13 @@ public:
   Window(Window&& window) = default;
   ~Window();
 
-  void swapBuffers();
+  void swap_buffers();
 
 private:
-  void createWindow();
-  void createRenderer();
-  void createGLContext();
+  void create_window();
+  void create_renderer();
+  void create_GLContext();
+  bool initialise_image_support();
 
   std::unique_ptr<SDL_Window, SDLDestroyer> _window;
   std::unique_ptr<SDL_Renderer, SDLDestroyer> _renderer;

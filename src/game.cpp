@@ -3,8 +3,8 @@
 #include <utility>
 #include <memory>
 
-#include <GL/glew.h>
 #include <easylogging++.h>
+#include <GL/glew.h>
 
 #include "game.h"
 #include "resource.h"
@@ -22,35 +22,18 @@ const int TICKS_PER_FRAME = 1000/MAX_FPS;
 Game::Game(std::unique_ptr<Window> window, std::unique_ptr<ResourceManager> resources) :
     _window(std::move(window)), _resources(std::move(resources)) {}
 
-void check_img() {
-	SDL_version compile_version;
-	SDL_IMAGE_VERSION(&compile_version);
-	LOG(DEBUG) << "compiled with SDL_image version: " <<
-					compile_version.major << "." <<
-					compile_version.minor << "." <<
-					compile_version.patch << "\n";
-	LOG(DEBUG) << "running with SDL_image version: " <<
-					link_version->major << "." <<
-					link_version->minor << "." <<
-					link_version->patch << "\n";
-}
-
 void Game::run() {
   std::uint32_t frames_rendered = 0;
   Timer rate_timer{};
   Renderer renderer{MAX_FPS};
   SDL_Event event;
 
-	check_img();
-	int img = IMG_Init(IMG_INIT_PNG);
-	LOG(DEBUG) << "img: " << img << "\n";
-
   rate_timer.start();
   while (true) {
 
     if (frames_rendered < MAX_FPS) {
       renderer.render();
-      _window->swapBuffers();
+      _window->swap_buffers();
       frames_rendered++;
     } else {
 
