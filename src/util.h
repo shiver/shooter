@@ -11,7 +11,6 @@ std::unique_ptr<T> make_unique(Args&&... args) {
     return std::unique_ptr<T>{new T{std::forward<Args>(args)... }};
 }
 
-
 // Implementation based on Explicit C++ blog post:
 // http://cpp.indi.frih.net/blog/2014/09/how-to-read-an-entire-file-into-memory-in-cpp/
 template <typename Char, typename Traits,

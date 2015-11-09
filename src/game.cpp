@@ -16,8 +16,8 @@
 #include "render.h"
 #include "SDL_image.h"
 
-const int MAX_FPS = 60;
-const int TICKS_PER_FRAME = 1000/MAX_FPS;
+const std::uint32_t MAX_FPS = 60;
+const std::uint32_t TICKS_PER_FRAME = 1000/MAX_FPS;
 
 Game::Game(std::unique_ptr<Window> window, std::unique_ptr<ResourceManager> resources) :
     _window(std::move(window)), _resources(std::move(resources)) {}
@@ -26,6 +26,7 @@ void Game::run() {
   std::uint32_t frames_rendered = 0;
   Timer rate_timer{};
   Renderer renderer{MAX_FPS};
+  renderer.init();
   SDL_Event event;
 
   rate_timer.start();
@@ -38,9 +39,9 @@ void Game::run() {
     } else {
 
       if (rate_timer.get_ticks() < TICKS_PER_FRAME) {
-        LOG(DEBUG) << "Frames capped: " << frames_rendered << " [" << rate_timer.get_ticks() << "]\n";
+      //  LOG(DEBUG) << "Frames capped: " << frames_rendered << " [" << rate_timer.get_ticks() << "]\n";
         float delay = TICKS_PER_FRAME - rate_timer.get_ticks();
-        LOG(DEBUG) << "Waiting for: " << delay << "\n";
+      //  LOG(DEBUG) << "Waiting for: " << delay << "\n";
         SDL_Delay(delay);
       }
 

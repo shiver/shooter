@@ -3,7 +3,7 @@
 #include <utility>
 
 #include <easylogging++.h>
-#include <SDL.h>
+#include <GL/GL.h>
 #include <SDL_image.h>
 
 #include "window.h"
@@ -17,10 +17,10 @@ Window::Window() {
 
 bool Window::initialise_image_support() {
   int img_flags = IMG_Init(IMG_INIT_PNG);
-	if ((img_flags & IMG_INIT_PNG) != IMG_INIT_PNG) {
-		LOG(ERROR) << "SDL2_image failed to initialise PNG support\n";
-    return false;
-	}
+  if ((img_flags & IMG_INIT_PNG) != IMG_INIT_PNG) {
+      LOG(ERROR) << "SDL2_image failed to initialise PNG support: " << IMG_GetError() << "\n";
+      return false;
+  }
 
   return true;
 }
@@ -64,6 +64,8 @@ Window::Window(int w_opts, int r_opts)
   create_window();
   create_renderer();
   initialise_image_support();
+
+  glViewport(0, 0, 640, 480);
 }
 
 void Window::swap_buffers() { SDL_GL_SwapWindow(_window.get()); }

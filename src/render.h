@@ -5,7 +5,9 @@
 class Renderer {
 public:
   Renderer() : _cap_frames(false) {}
+  ~Renderer();
   void render();
+  void init(); //temporary
 
   Renderer(std::uint32_t max_fps) {
     _frame_rate_timer = Timer{};
@@ -19,6 +21,8 @@ private:
   std::uint32_t _frame_counter;
   std::uint32_t _ticks_per_frame;
   bool _cap_frames;
+
+  GLuint VAO, VBO, EBO, shaderProgram;
 };
 
 // vim: ts=2:sw=2:et:

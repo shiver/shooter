@@ -30,19 +30,33 @@ SET(EASYLOGGINGPP_SOURCE_DIR libs/easyloggingpp)
 include_directories(${EASYLOGGINGPP_SOURCE_DIR}/src)
 
 INCLUDE(ExternalProject)
-ExternalProject_Add(project_SDL2_image
-    SOURCE_DIR ${CMAKE_SOURCE_DIR}/libs/SDL2_image
-    PREFIX ${CMAKE_BINARY_DIR}/libs/SDL2_image
-    CONFIGURE_COMMAND ${CMAKE_SOURCE_DIR}/libs/SDL2_image/autogen.sh && ${CMAKE_SOURCE_DIR}/libs/SDL2_image/configure --prefix ${CMAKE_BINARY_DIR} --libdir ${CMAKE_BINARY_DIR}/libs/SDL2_image
-	BUILD_COMMAND make
-    INSTALL_COMMAND make install
-)
-ExternalProject_Get_Property(project_SDL2_image install_dir)
-add_library(SDL2_image STATIC IMPORTED)
-set_property(TARGET SDL2_image PROPERTY IMPORTED_LOCATION ${install_dir}/libSDL2_image.a)
-add_dependencies(SDL2_image project_SDL2_image)
+if(${CMAKE_CXX_COMPILER_ID} STREQUAL "MSVC")
+    SET(SDL2_IMAGE_SOURCE_DIR ${CMAKE_SOURCE_DIR}/libs/SDL2_image)
 
-SET(SDL2_IMAGE_SOURCE_DIR libs/SDL2_image)
+    file(GLOB SDL2_IMAGE_SOURCE_FILES
+        ${SDL2_IMAGE_SOURCE_DIR}/VisualC/external/include/*.h
+        ${SDL2_IMAGE_SOURCE_DIR}/*.h
+        ${SDL2_IMAGE_SOURCE_DIR}/*.c
+    )
+
+     add_library(SDL2_image STATIC ${SDL2_IMAGE_SOURCE_FILES})
+     target_compile_definitions(SDL2_image PUBLIC -DLOAD_PNG -DLOAD_PNG_DYNAMIC=\"libpng16-16.dll\" -DPNG_USE_DLL)
+     target_include_directories(SDL2_image PUBLIC ${SDL2_IMAGE_SOURCE_DIR}/VisualC/external/include)
+else()
+    ExternalProject_Add(project_SDL2_image
+        SOURCE_DIR ${CMAKE_SOURCE_DIR}/libs/SDL2_image
+        PREFIX ${CMAKE_BINARY_DIR}/libs/SDL2_image
+        CONFIGURE_COMMAND ${CMAKE_SOURCE_DIR}/libs/SDL2_image/autogen.sh && ${CMAKE_SOURCE_DIR}/libs/SDL2_image/configure --prefix ${CMAKE_BINARY_DIR} --libdir ${CMAKE_BINARY_DIR}/libs/SDL2_image
+        BUILD_COMMAND make
+        INSTALL_COMMAND make install
+    )
+
+    ExternalProject_Get_Property(project_SDL2_image install_dir)
+    add_library(SDL2_image STATIC IMPORTED)
+    set_property(TARGET SDL2_image PROPERTY IMPORTED_LOCATION ${install_dir}/libSDL2_image.a)
+    add_dependencies(SDL2_image project_SDL2_image)
+endif()
+
 include_directories(${SDL2_IMAGE_SOURCE_DIR})
 
 file(GLOB shooter_SRC
