@@ -1,17 +1,17 @@
 #include <iostream>
 #include <fstream>
 
-#include <GL/glew.h>
 #include <easylogging++.h>
+#include <GL/glew.h>
 
 #include "util.h"
 #include "render.h"
 
 void Renderer::init() {
-    glewExperimental = GL_TRUE;
     glewInit();
 
-    auto vert_src = read_stream_into_string(std::ifstream("../src/shaders/triangle.vert"));
+    std::ifstream vert_ifs("../src/shaders/triangle.vert");
+    auto vert_src = read_stream_into_string(vert_ifs);
     const char* s = vert_src.c_str();
     GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &s, NULL);
@@ -27,7 +27,8 @@ void Renderer::init() {
     }
 
     // Fragment shader
-    auto frag_src = read_stream_into_string(std::ifstream("../src/shaders/triangle.frag"));
+    std::ifstream frag_ifs("../src/shaders/triangle.frag");
+    auto frag_src = read_stream_into_string(frag_ifs);
     const char* fragmentShaderSource = frag_src.c_str();
     GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
@@ -58,7 +59,7 @@ void Renderer::init() {
         0.5f,  0.5f, 0.0f,  // Top Right
         0.5f, -0.5f, 0.0f,  // Bottom Right
         -0.5f, -0.5f, 0.0f,  // Bottom Left
-        -0.5f,  0.5f, 0.0f   // Top Left 
+        -0.5f,  0.5f, 0.0f   // Top Left
     };
     GLuint indices[] = {  // Note that we start from 0!
         0, 1, 3,  // First Triangle
@@ -92,7 +93,7 @@ void Renderer::render() {
   // Draw our first triangle
   glUseProgram(shaderProgram);
   glBindVertexArray(VAO);
-  //glDrawArrays(GL_TRIANGLES, 0, 6);
+
   glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
   glBindVertexArray(0);
 }

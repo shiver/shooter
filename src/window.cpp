@@ -3,7 +3,7 @@
 #include <utility>
 
 #include <easylogging++.h>
-#include <GL/GL.h>
+#include <GL/glew.h>
 #include <SDL_image.h>
 
 #include "window.h"

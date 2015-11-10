@@ -30,8 +30,8 @@ SET(EASYLOGGINGPP_SOURCE_DIR libs/easyloggingpp)
 include_directories(${EASYLOGGINGPP_SOURCE_DIR}/src)
 
 INCLUDE(ExternalProject)
+SET(SDL2_IMAGE_SOURCE_DIR ${CMAKE_SOURCE_DIR}/libs/SDL2_image)
 if(${CMAKE_CXX_COMPILER_ID} STREQUAL "MSVC")
-    SET(SDL2_IMAGE_SOURCE_DIR ${CMAKE_SOURCE_DIR}/libs/SDL2_image)
 
     file(GLOB SDL2_IMAGE_SOURCE_FILES
         ${SDL2_IMAGE_SOURCE_DIR}/VisualC/external/include/*.h
