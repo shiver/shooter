@@ -7,14 +7,14 @@ class Game {
 public:
   Game();
   Game(Window&&);
-  Game(std::unique_ptr<Window>, std::unique_ptr<ResourceManager>);
+  Game(std::unique_ptr<Window>, std::shared_ptr<ResourceManager>);
 
   void run();
   void quit();
 
 private:
   std::unique_ptr<Window> _window;
-  std::unique_ptr<ResourceManager> _resources;
+  std::shared_ptr<ResourceManager> _resources;
 };
 
 // vim: ts=2:sw=2:et:

@@ -19,15 +19,28 @@
 const std::uint32_t MAX_FPS = 60;
 const std::uint32_t TICKS_PER_FRAME = 1000/MAX_FPS;
 
-Game::Game(std::unique_ptr<Window> window, std::unique_ptr<ResourceManager> resources) :
+Game::Game(std::unique_ptr<Window> window, std::shared_ptr<ResourceManager> resources) :
     _window(std::move(window)), _resources(std::move(resources)) {}
 
 void Game::run() {
   std::uint32_t frames_rendered = 0;
   Timer rate_timer{};
   Renderer renderer{MAX_FPS};
-  renderer.init();
-  SDL_Event event;
+    
+
+  // TODO: SceneManager to provide components such as Resources
+  // to relevant parts in the pipeline, such as the renderer.
+  _resources->create<ShaderResource>("../src/shaders/triangle.vert", GL_VERTEX_SHADER);
+
+//  std::ifstream vert_ifs("../src/shaders/triangle.vert");
+//  auto vert_src = read_stream_into_string(vert_ifs);
+//  const char* s = vert_src.c_str();
+//  GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+//  glShaderSource(vertexShader, 1, &s, NULL);
+//  glCompileShader(vertexShader);
+
+  renderer.init(_resources);
+
 
   rate_timer.start();
   while (true) {
@@ -51,6 +64,7 @@ void Game::run() {
     }
 
 
+    SDL_Event event;
     while (SDL_PollEvent(&event)) {
       switch (event.type) {
       case SDL_KEYDOWN:

@@ -7,7 +7,7 @@
 #include "util.h"
 #include "render.h"
 
-void Renderer::init() {
+void Renderer::init(const std::weak_ptr<ResourceManager>& resources) {
     glewInit();
 
     std::ifstream vert_ifs("../src/shaders/triangle.vert");

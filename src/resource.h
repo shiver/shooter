@@ -32,13 +32,8 @@ public:
     ResourceManager() : _resources() {}
     ResourceManager(ResourceManager&&) = default;
 
-    template<typename T>
-    T add(const T&) {
-    }
-
-    template<typename T>
-    T add(const T&&) {
-    }
+    template<typename T, typename... Args>
+    std::unique_ptr<T> create(Args&&... args);
 
 private:
     std::unordered_map<std::string, Resource> _resources;

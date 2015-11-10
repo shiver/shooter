@@ -1,13 +1,14 @@
 #pragma once
 
 #include "timer.h"
+#include "resource.h"
 
 class Renderer {
 public:
   Renderer() : _cap_frames(false) {}
   ~Renderer();
   void render();
-  void init(); //temporary
+  void init(const std::weak_ptr<ResourceManager>& resources); //temporary
 
   Renderer(std::uint32_t max_fps) {
     _frame_rate_timer = Timer{};

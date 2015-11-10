@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
   }
 
   auto main_window = make_unique<Window>();
-  auto resource_manager = make_unique<ResourceManager>();
+  auto resource_manager = std::make_shared<ResourceManager>();
 
   auto game = Game(std::move(main_window), std::move(resource_manager));
   game.run();
