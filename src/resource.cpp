@@ -34,9 +34,4 @@ void ShaderResource::get_error(GLuint shader_id) {
   LOG(ERROR) << "Shader compile failed for " <<  _filename << ": " << infoLog << "\n";
 }
 
-template<class T, typename... Args>
-std::unique_ptr<T> ResourceManager::create(Args&&... args) {
-    return make_unique<T>(std::forward<Args>(args)...);
-}
-
 // vim: ts=2:sw=2:et:
