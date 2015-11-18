@@ -34,4 +34,10 @@ void ShaderResource::get_error(GLuint shader_id) {
   LOG(ERROR) << "Shader compile failed for " <<  _filename << ": " << infoLog << "\n";
 }
 
+std::shared_ptr<Resource> ResourceManager::get(std::uint64_t id) {
+  auto result = _resources.find(id);
+  if (result == _resources.end()) return nullptr;
+  return result->second;
+}
+
 // vim: ts=2:sw=2:et:

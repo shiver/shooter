@@ -27,21 +27,22 @@ void Game::run() {
   Timer rate_timer{};
   Renderer renderer{MAX_FPS};
 
-
   // TODO: SceneManager to provide components such as Resources
   // to relevant parts in the pipeline, such as the renderer.
-  _resources->create<ShaderResource>(
+  auto vert = _resources->create<ShaderResource>(
       "../src/shaders/triangle.vert",
       GL_VERTEX_SHADER
   );
 
+  auto frag = _resources->create<ShaderResource>(
+      "../src/shaders/triangle.frag",
+      GL_FRAGMENT_SHADER
+  );
 
- //  std::ifstream vert_ifs("../src/shaders/triangle.vert");
-//  auto vert_src = read_stream_into_string(vert_ifs);
-//  const char* s = vert_src.c_str();
-//  GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-//  glShaderSource(vertexShader, 1, &s, NULL);
-//  glCompileShader(vertexShader);
+  // TODO: Combine shaders into program
+  //auto program = _resource->create<ShaderProgram>(
+  //    std::vector<Resource>{_resources->get(vert), _resources->get(frag)}
+  //);
 
   renderer.init(_resources);
 
