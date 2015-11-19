@@ -12,11 +12,15 @@ ShaderResource::ShaderResource(const char* filename, GLuint shader_type) {
   _shader_type = shader_type;
 }
 
+void ShaderResource::debug() {
+  LOG(DEBUG) << _filename;
+}
+
 void ShaderResource::load() {
   std::ifstream ifs(_filename);
   auto shader_src = read_stream_into_string(ifs);
+  const char* shader_bytes = shader_src.c_str();
 
-  const char* shader_bytes = _shader_src.c_str();
   GLuint shader_id = glCreateShader(_shader_type);
   glShaderSource(shader_id, 1, &shader_bytes, NULL);
   glCompileShader(shader_id);
@@ -26,6 +30,16 @@ void ShaderResource::load() {
   if (!success) {
     get_error(shader_id);
   }
+
+  _shader_id = shader_id;
+}
+
+GLuint ShaderResource::get() {
+  return _shader_id;
+}
+
+void ShaderResource::cleanup() {
+  glDeleteShader(_shader_id);
 }
 
 void ShaderResource::get_error(GLuint shader_id) {

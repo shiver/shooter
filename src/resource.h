@@ -1,9 +1,12 @@
 #pragma once
+#include <memory>
+#include <unordered_map>
 
 #include <easylogging++.h>
 #include <GL/glew.h>
 
-#include <unordered_map>
+#include "resource.h"
+
 
 class Resource {
 public:
@@ -16,20 +19,25 @@ private:
   std::uint64_t _id;
 };
 
+typedef std::vector<std::shared_ptr<Resource>> ResourceList;
+
 class ShaderResource : public Resource {
 public:
-  ShaderResource() {}
   ShaderResource(const char* filename, GLuint shader_type);
 
   ~ShaderResource() = default;
 
+  void debug();
   void load();
   void get_error(GLuint shader_id);
   void create_program(std::vector<ShaderResource>);
+  GLuint get();
+  void cleanup();
 
 private:
-  const char* _filename;
+  std::string _filename;
   GLuint _shader_type;
+  GLuint _shader_id;
   std::string _shader_src;
 };
 
@@ -57,5 +65,6 @@ private:
     std::unordered_map<std::uint64_t, std::shared_ptr<Resource>> _resources;
     std::uint64_t _last_id = 0;
 };
+
 
 // vim: ts=2:sw=2:et:

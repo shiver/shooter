@@ -6,7 +6,7 @@
 
 class ShaderProgram : public Resource {
 public:
-    ShaderProgram(std::vector<std::uint64_t>);
+    ShaderProgram(ResourceList);
 };
 
 

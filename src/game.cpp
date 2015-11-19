@@ -8,6 +8,7 @@
 
 #include "game.h"
 #include "resource.h"
+#include "shader.h"
 #include "window.h"
 #include "sprite.h"
 #include "vector.h"
@@ -26,6 +27,7 @@ void Game::run() {
   std::uint32_t frames_rendered = 0;
   Timer rate_timer{};
   Renderer renderer{MAX_FPS};
+  glewInit();
 
   // TODO: SceneManager to provide components such as Resources
   // to relevant parts in the pipeline, such as the renderer.
@@ -40,11 +42,13 @@ void Game::run() {
   );
 
   // TODO: Combine shaders into program
-  //auto program = _resource->create<ShaderProgram>(
-  //    std::vector<Resource>{_resources->get(vert), _resources->get(frag)}
-  //);
+  auto program = _resources->create<ShaderProgram>(
+      ResourceList{_resources->get(vert), _resources->get(frag)}
+  );
 
-  renderer.init(_resources);
+  LOG(DEBUG) << "Shader program created";
+
+  //renderer.init(_resources);
 
 
   rate_timer.start();
