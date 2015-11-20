@@ -27,7 +27,6 @@ void Game::run() {
   std::uint32_t frames_rendered = 0;
   Timer rate_timer{};
   Renderer renderer{MAX_FPS};
-  glewInit();
 
   // TODO: SceneManager to provide components such as Resources
   // to relevant parts in the pipeline, such as the renderer.
@@ -46,16 +45,17 @@ void Game::run() {
       ResourceList{_resources->get(vert), _resources->get(frag)}
   );
 
-  LOG(DEBUG) << "Shader program created";
+  // TODO: Move VAOs to own class
+  renderer.init();
+  auto program_id = std::static_pointer_cast<ShaderProgram>(_resources->get(program))->get();
 
-  //renderer.init(_resources);
-
+  LOG(DEBUG) << "Program ID: " << program_id;
 
   rate_timer.start();
   while (true) {
 
     if (frames_rendered < MAX_FPS) {
-      renderer.render();
+      renderer.render(program_id);
       _window->swap_buffers();
       frames_rendered++;
     } else {

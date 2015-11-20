@@ -7,8 +7,8 @@ class Renderer {
 public:
   Renderer() : _cap_frames(false) {}
   ~Renderer();
-  void render();
-  void init(const std::weak_ptr<ResourceManager>& resources); //temporary
+  void render(const std::uint64_t); // TODO: temporary
+  void init(); // TODO: temporary
 
   Renderer(std::uint32_t max_fps) {
     _frame_rate_timer = Timer{};

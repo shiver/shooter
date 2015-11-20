@@ -7,6 +7,10 @@
 class ShaderProgram : public Resource {
 public:
     ShaderProgram(ResourceList);
+    GLuint get() { return _program_id; }
+
+private:
+    GLuint _program_id;
 };
 
 

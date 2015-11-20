@@ -13,6 +13,7 @@ Window::Window() {
   create_renderer();
   create_GLContext();
   initialise_image_support();
+  glewInit();
 }
 
 bool Window::initialise_image_support() {
